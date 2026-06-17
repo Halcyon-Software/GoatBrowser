@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Homescreen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar" onclick="togglePanel()">⚙</div>
+
+<div class="panel" id="panel">
+    <p>Settings (WIP)</p>
+</div>
+
+<div class="container">
+
+    <h1 id="welcome"></h1>
+
+    <div id="clock"></div>
+
+    <div id="weather">Weather WIP</div>
+
+    <div class="widgets" id="widgets"></div>
+
+    <div class="search">
+        <input id="search" placeholder="Search around...">
+    </div>
+
+    <div id="news"></div>
+
+</div>
+
+<script src="settings.js"></script>
+<script src="widgets.js"></script>
+<script src="news.js"></script>
+<script src="script.js"></script>
+
+<script>
+loadWidgets();
+loadNews();
+
+function togglePanel() {
+    const p = document.getElementById("panel");
+    p.style.display = p.style.display === "block" ? "none" : "block";
+}
+</script>
+
+</body>
+</html>
