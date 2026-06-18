@@ -1,8 +1,57 @@
-# HalcyonEULA License
+# Halcyon Source License (HSL) v1.0
 
-(c) **Halcyon Software**
+##### Copyright (c) Halcyon Software
 
-Halcyon Goat Browser ("Goat Browser") is an open-source software. You are free to:
-- Modify the code of the software for personal use
-- Modify the code of the software and release it as an open source software ("Fork")
-- Upload the software to other websites ("Third-party") WITH the Halcyon Software's permission
+## 1. Overview
+
+#### This license governs the source code of Halcyon Goat Browser ("Goat Browser").
+
+#### The source code is publicly available and may be viewed, studied, modified, and redistributed under the terms of this license.
+
+## 2. Permissions
+
+### You may:
+
+• Use the source code for personal, educational, research, and commercial purposes.
+
+• Modify the source code.
+
+• Create forks and derivative works.
+
+• Publish your modifications and forks.
+
+• Contribute changes to the official Goat Browser project.
+
+## 3. Requirements
+
+### When redistributing the source code or a modified version, you must:
+
+• Retain this license file.
+
+• Retain all copyright notices.
+
+• Clearly indicate any modifications made to the original source code.
+
+• Clearly state that your version is a modified version or fork if it is not the official Goat Browser.
+
+## 4. Restrictions
+
+### You may not:
+
+• Claim that a modified version is the official Goat Browser.
+
+• Remove attribution to Halcyon Software.
+
+• Use the Goat Browser name, logo, branding, or trademarks except as permitted by TRADEMARKS.md.
+
+• Imply endorsement, sponsorship, or affiliation with Halcyon Software without permission.
+
+# 5. Warranty Disclaimer
+
+#### The source code is provided "AS IS", without warranty of any kind, express or implied.
+
+# 6. Limitation of Liability
+
+#### In no event shall Halcyon Software or contributors be liable for any damages arising from the use of the software.
+
+##### End of License
