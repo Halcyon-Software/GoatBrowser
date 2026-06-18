@@ -1,86 +1,192 @@
 :root {
-    --bg: #0f0f14;
-    --card: rgba(255,255,255,0.06);
-    --text: #ffffff;
-    --glow: rgba(120,120,255,0.25);
+    --bg: #0b0d12;
+    --card: rgba(255, 255, 255, 0.06);
+    --text: rgba(255, 255, 255, 0.92);
+    --muted: rgba(255, 255, 255, 0.6);
+    --glow: rgba(120, 160, 255, 0.35);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    margin: 0;
     font-family: Arial, sans-serif;
-    background: var(--bg);
     color: var(--text);
-    background-image: url("backgrounds/startBackground.png");
+
+    background: var(--bg);
     background-size: cover;
     background-position: center;
+
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
+/* darkening 10% */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.10);
+    pointer-events: none;
+}
 .container {
-    text-align: center;
-    padding-top: 8vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 60px;
+    gap: 18px;
+}
+.greeting {
+    font-size: 26px;
 }
 
-h1 {
-    font-size: 32px;
-    font-weight: 500;
-}
+.clock {
+    font-size: 64px;
+    font-weight: 300;
 
-#clock {
-    font-size: 48px;
-    margin: 10px 0;
-    text-shadow: 0 0 20px var(--glow);
+    text-shadow: 0 0 18px var(--glow);
 }
-
 .widgets {
     display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin: 20px;
+    gap: 12px;
+
+    padding: 10px 16px;
+
+    background: var(--card);
+    border-radius: 16px;
+
+    backdrop-filter: blur(12px);
 }
 
 .widget {
-    width: 70px;
-    height: 70px;
-    background: var(--card);
-    border-radius: 12px;
+    width: 52px;
+    height: 52px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
+    border-radius: 14px;
+
+    transition: .2s;
     cursor: pointer;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 15px rgba(0,0,0,0.4);
 }
 
+.widget:hover {
+    transform: translateY(-4px) scale(1.1);
+    box-shadow: 0 0 15px var(--glow);
+}
+
+.widget img {
+    width: 24px;
+    height: 24px;
+}
 .search {
-    margin-top: 20px;
+    width: 60%;
 }
 
-input {
-    width: 50%;
-    padding: 12px;
-    border-radius: 10px;
+.searchBox {
+    display: flex;
+    gap: 8px;
+
+    background: var(--card);
+    padding: 10px;
+    border-radius: 14px;
+
+    backdrop-filter: blur(12px);
+}
+
+.searchBox input {
+    flex: 1;
+    background: transparent;
     border: none;
     outline: none;
-    background: var(--card);
-    color: white;
+    color: var(--text);
 }
 
-.topbar {
-    position: absolute;
-    top: 10px;
-    right: 10px;
+.searchBox button {
+    border: none;
+    padding: 8px 12px;
+
+    background: rgba(255,255,255,0.1);
+    color: white;
+
+    border-radius: 10px;
+
     cursor: pointer;
 }
+.topbar {
+    position: fixed;
+    top: 14px;
+    right: 14px;
 
-.panel {
-    position: absolute;
-    top: 40px;
-    right: 10px;
-    width: 250px;
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     background: var(--card);
     border-radius: 10px;
-    padding: 10px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(12px);
+}
+.panel {
+    position: fixed;
+    top: 60px;
+    right: 14px;
+
+    width: 260px;
+
+    background: var(--card);
+    border-radius: 14px;
+
+    padding: 12px;
+
     display: none;
-    backdrop-filter: blur(10px);
+
+    backdrop-filter: blur(12px);
+}
+.footer {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+
+    text-align: center;
+
+    font-size: 12px;
+    color: var(--muted);
+}
+.settingsTitle {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.settingsBlock {
+    margin-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.settingsBlock label {
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+.settingsBlock select,
+.settingsBlock input {
+    background: rgba(255,255,255,0.08);
+    border: none;
+    padding: 6px;
+    border-radius: 8px;
+    color: white;
 }

@@ -1,29 +1,27 @@
-function saveSetting(key, value) {
-    localStorage.setItem(key, value);
+function set(key, value) {
+    localStorage.setItem(key, JSON.stringify(value));
 }
 
-function getSetting(key, fallback) {
-    return localStorage.getItem(key) || fallback;
+function get(key, fallback = null) {
+    const v = localStorage.getItem(key);
+    return v ? JSON.parse(v) : fallback;
 }
 
-function setUsername(name) {
-    saveSetting("username", name);
+function setBackground(image) {
+    document.body.style.backgroundImage = `url(${image})`;
+    set("bg", image);
 }
 
+function loadBackground() {
+    const bg = get("bg", null);
+    if (bg) {
+        document.body.style.backgroundImage = `url(${bg})`;
+    }
+}
 function setSearchEngine(engine) {
-    saveSetting("searchEngine", engine);
+    localStorage.setItem("engine", engine);
 }
 
 function getSearchEngine() {
-    return getSetting("searchEngine", "google");
-}
-
-function setBackground(bg) {
-    saveSetting("background", bg);
-    document.body.style.backgroundImage =
-        `url('backgrounds/${bg}')`;
-}
-
-function getBackground() {
-    return getSetting("background", "startBackground.png");
+    return localStorage.getItem("engine") || "google";
 }

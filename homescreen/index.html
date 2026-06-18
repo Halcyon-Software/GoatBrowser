@@ -1,50 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homescreen</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-
-<div class="topbar" onclick="togglePanel()">⚙</div>
-
-<div class="panel" id="panel">
-    <p>Settings (WIP)</p>
-</div>
 
 <div class="container">
 
-    <h1 id="welcome"></h1>
+    <div id="welcome" class="greeting"></div>
+    <div id="clock" class="clock"></div>
+    <div id="weather" class="weather"></div>
 
-    <div id="clock"></div>
+    <div id="motd" class="motd"></div>
 
-    <div id="weather">Weather WIP</div>
+    <div id="widgets" class="widgets"></div>
 
-    <div class="widgets" id="widgets"></div>
-
-    <div class="search">
-        <input id="search" placeholder="Search around...">
-    </div>
-
-    <div id="news"></div>
+    <div id="search" class="search"></div>
 
 </div>
 
+<div class="topbar" onclick="toggleSettings()">⚙</div>
+
+<div id="settingsPanel" class="panel"></div>
+
+<footer class="footer">
+    Goat Browser by Halcyon Software •
+    <a href="https://github.com/Halcyon-Software/GoatBrowser/blob/main/EULA.md" target="_blank">
+        EULA
+    </a>
+</footer>
+
 <script src="settings.js"></script>
+<script src="greeting.js"></script>
+<script src="clock.js"></script>
 <script src="widgets.js"></script>
-<script src="news.js"></script>
+<script src="search.js"></script>
+<script src="motd.js"></script>
+<script src="ui.js"></script>
 <script src="script.js"></script>
-
-<script>
-loadWidgets();
-loadNews();
-
-function togglePanel() {
-    const p = document.getElementById("panel");
-    p.style.display = p.style.display === "block" ? "none" : "block";
-}
-</script>
 
 </body>
 </html>
