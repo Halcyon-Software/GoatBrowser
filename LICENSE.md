@@ -42,7 +42,7 @@
 
 • Remove attribution to Halcyon Software.
 
-• Use the Goat Browser name, logo, branding, or trademarks except as permitted by TRADEMARKS.md.
+• Use the Goat Browser name, logo, branding, or trademarks.
 
 • Imply endorsement, sponsorship, or affiliation with Halcyon Software without permission.
 
